@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Greg C. Wright — Economist</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #5a5a5a;
+    --light: #8a8a8a;
+    --rule: #ddd;
+    --bg: #faf9f7;
+    --accent: #1a3a5c;
+    --accent-light: #e8eef5;
+    --serif: 'EB Garamond', Georgia, serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--serif);
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  /* ── Layout ── */
+  .site-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--rule);
+    padding: 3.5rem 0 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+    align-items: end;
+  }
+
+  .name-block h1 {
+    font-family: var(--serif);
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+  }
+
+  .name-block .title {
+    font-family: var(--sans);
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .name-block .title a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  .name-block .title a:hover { border-bottom-color: var(--accent); }
+
+  .header-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+  }
+
+  .header-links a {
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+  }
+  .header-links a:hover {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  /* ── Nav ── */
+  nav {
+    border-bottom: 1px solid var(--rule);
+    padding: 0;
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 0;
+  }
+  nav ul li a {
+    display: block;
+    font-family: var(--sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.9rem 1.2rem 0.9rem 0;
+    margin-right: 0.5rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  nav ul li a:hover, nav ul li a.active {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+
+  /* ── Main content ── */
+  main { padding: 3rem 0 5rem; }
+
+  section { margin-bottom: 3.5rem; }
+
+  /* ── Bio ── */
+  .bio {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 3rem;
+    align-items: start;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 3.5rem;
+  }
+
+  .bio p { margin-bottom: 1rem; color: var(--ink); }
+  .bio p:last-child { margin-bottom: 0; }
+
+  .bio-links {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .bio-links a {
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 0.2rem 0.6rem;
+    background: var(--accent-light);
+    border-radius: 2px;
+    transition: background 0.15s;
+  }
+  .bio-links a:hover { background: #cdd8e8; }
+
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(135deg, #c8d4e0 0%, #e0e8f0 100%);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    color: var(--light);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── Section headings ── */
+  .section-label {
+    font-family: var(--sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--light);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── Paper entries ── */
+  .paper {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .paper:first-of-type { padding-top: 0; }
+  .paper:last-of-type { border-bottom: none; }
+
+  .paper-title {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+  }
+
+  .paper-meta {
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .paper-meta .journal {
+    font-style: italic;
+    font-family: var(--serif);
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+
+  .paper-abstract {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 0.7rem;
+  }
+
+  .paper-links {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .paper-links a {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    text-decoration: none;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid #b0c0d4;
+    border-radius: 2px;
+    transition: background 0.15s, color 0.15s;
+  }
+  .paper-links a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  .status-badge {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 0.65rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.1rem 0.45rem;
+    border-radius: 2px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+  .badge-wip { background: #fff3cd; color: #8a6000; }
+  .badge-wp  { background: #d4edda; color: #1a5c2a; }
+
+  /* ── Other work / policy ── */
+  .other-item {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .other-item:last-child { border-bottom: none; }
+  .other-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .other-title .co {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: var(--muted);
+    font-family: var(--sans);
+  }
+  .other-item a {
+    font-family: var(--sans);
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    text-decoration: none;
+    white-space: nowrap;
+    padding: 0.15rem 0.5rem;
+    border: 1px solid #b0c0d4;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .other-item a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--rule);
+    padding: 1.5rem 0;
+    font-family: var(--sans);
+    font-size: 0.75rem;
+    color: var(--light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  footer a { color: var(--light); text-decoration: none; }
+  footer a:hover { color: var(--muted); }
+
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    header { grid-template-columns: 1fr; }
+    .header-links { flex-direction: row; align-items: flex-start; }
+    .bio { grid-template-columns: 1fr; }
+    .photo-placeholder { display: none; }
+    .other-item { flex-direction: column; gap: 0.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="site-wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="name-block">
+      <h1>Greg C. Wright</h1>
+      <div class="title">
+        Associate Professor &amp; Chair, Economics ·
+        <a href="https://economics.ucmerced.edu">UC Merced</a> ·
+        Non-Resident Senior Fellow, <a href="https://www.brookings.edu/people/greg-wright/">Brookings</a>
+      </div>
+    </div>
+    <div class="header-links">
+      <a href="https://gregcwright-econ.github.io/files/gregwrightcv.pdf">CV ↗</a>
+      <a href="https://scholar.google.com/citations?user=fMoODlwAAAAJ&hl=en">Google Scholar ↗</a>
+      <a href="mailto:gwright4@ucmerced.edu">gwright4@ucmerced.edu</a>
+    </div>
+  </header>
+
+  <!-- NAV -->
+  <nav>
+    <ul>
+      <li><a href="#bio" class="active">About</a></li>
+      <li><a href="#working-papers">Working Papers</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#other">Other Work</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- BIO -->
+    <div class="bio" id="bio">
+      <div>
+        <p>
+          I am an Associate Professor and Chair of Economics at UC Merced, where I study labor markets,
+          immigration, and the economics of innovation. My research asks how workers and firms adapt
+          to large structural forces — trade liberalization, technological change, immigration policy,
+          and knowledge spillovers — with particular attention to the margins that standard datasets miss.
+        </p>
+        <p>
+          Recent projects examine monopsony power and worker immobility in H-1B visa labor markets,
+          peer effects in entrepreneurship among research scientists, and the local labor market
+          consequences of data center construction. I also serve as a Non-Resident Senior Fellow at
+          the Brookings Institution, where I contribute to work on local economic development.
+        </p>
+        <p>
+          I received my Ph.D. in Economics from UC Davis and have previously held a position at the
+          University of Essex.
+        </p>
+        <div class="bio-links">
+          <a href="https://gregcwright-econ.github.io/files/gregwrightcv.pdf">Curriculum Vitae</a>
+          <a href="https://scholar.google.com/citations?user=fMoODlwAAAAJ&hl=en">Google Scholar</a>
+          <a href="https://www.brookings.edu/people/greg-wright/">Brookings Profile</a>
+          <a href="mailto:gwright4@ucmerced.edu">Email</a>
+        </div>
+      </div>
+      <div class="photo-placeholder">Photo</div>
+    </div>
+
+    <!-- WORKING PAPERS -->
+    <section id="working-papers">
+      <div class="section-label">Working Papers</div>
+
+      <div class="paper">
+        <div class="paper-title">
+          The Missing Margin: Internal Mobility and the Measurement of Monopsony Power
+        </div>
+        <div class="paper-meta">Greg C. Wright &nbsp;·&nbsp; 2024</div>
+        <p class="paper-abstract">
+          Standard measures of employer monopsony power use job separations to infer worker
+          outside options, but ignore within-firm mobility. This paper shows that H-1B visa
+          restrictions create a sharp, policy-driven wedge between internal and external mobility
+          for affected workers. Exploiting this variation, I find that conventional monopsony
+          estimates are substantially upward-biased: much of the apparent wage markdown reflects
+          internal reallocation that standard frameworks misclassify as captive labor.
+        </p>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/h1b_monopsony_march.pdf">PDF</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          New Innovation Horizons: When Employees Become Entrepreneurs
+          <span class="status-badge badge-wip">Work in Progress</span>
+        </div>
+        <div class="paper-meta">
+          With <a href="https://sites.google.com/site/cfonsrosen/" style="color:var(--accent);text-decoration:none;">Christian Fons-Rosen</a>
+          and <a href="https://economics.ucmerced.edu/content/soo-yeon-kim" style="color:var(--accent);text-decoration:none;">Soo Yeon Kim</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications">
+      <div class="section-label">Publications</div>
+
+      <div class="paper">
+        <div class="paper-title">Immigration, Offshoring and American Jobs</div>
+        <div class="paper-meta">
+          With <a href="http://www.econ.ucdavis.edu/faculty/gperi/" style="color:var(--accent);text-decoration:none;">Giovanni Peri</a>
+          and <a href="https://sites.google.com/view/gipottaviano" style="color:var(--accent);text-decoration:none;">Gianmarco Ottaviano</a> &nbsp;·&nbsp;
+          <span class="journal">American Economic Review</span>, August 2013, Vol. 103 No. 5
+        </div>
+        <p class="paper-abstract">
+          Immigration and offshoring both shift labor supply in U.S. markets, but through
+          different channels. We show that immigration tends to complement native employment
+          by filling task-content gaps, while offshoring displaces routine-intensive work.
+          Jointly accounting for both forces reconciles earlier conflicting findings in the
+          immigration and trade literatures.
+        </p>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/opw_text_feb_complete.pdf">PDF</a>
+          <a href="https://gregcwright-econ.github.io/files/opw_web_appendix_complete.pdf">Appendix</a>
+          <a href="http://www.nytimes.com/2010/10/31/business/economy/31view.html">NY Times</a>
+          <a href="http://www.voxeu.org/index.php?q=node/5815">VoxEU</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Revisiting the Employment Impact of Offshoring</div>
+        <div class="paper-meta">
+          Greg C. Wright &nbsp;·&nbsp;
+          <span class="journal">European Economic Review</span>, February 2014, Vol. 66
+        </div>
+        <p class="paper-abstract">
+          Re-examining the employment effects of offshore production using improved industry-level
+          data and an instrumental variables strategy, I find that the negative employment effects
+          of offshoring are concentrated in manufacturing industries with high routine task content
+          and are substantially larger than earlier estimates suggested.
+        </p>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/wright_offshoring_2013.pdf">PDF</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">A Short-Run View of What Computers Do: Evidence from a U.K. Tax Incentive</div>
+        <div class="paper-meta">
+          With <a href="http://belkcollegeofbusiness.uncc.edu/pgaggl/" style="color:var(--accent);text-decoration:none;">Paul Gaggl</a> &nbsp;·&nbsp;
+          <span class="journal">American Economic Journal: Applied Economics</span>, July 2017, Vol. 9 No. 3
+        </div>
+        <p class="paper-abstract">
+          Exploiting a temporary U.K. tax incentive for IT investment as a source of exogenous
+          variation in computerization, we trace the short-run effects on occupation structure
+          within firms. IT adoption rapidly shifts labor demand toward communication-intensive
+          tasks and away from routine clerical work, consistent with a task-based model of
+          technology adoption.
+        </p>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/uk_ict_aeja_final.pdf">PDF</a>
+          <a href="https://gregcwright-econ.github.io/files/uk_ict_aeja_online_appendix_final.pdf">Appendix</a>
+          <a href="http://www.voxeu.org/article/short-run-view-what-computers-do">VoxEU</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">From Selling Goods to Selling Services: Firm Responses to Trade Liberalization</div>
+        <div class="paper-meta">
+          With <a href="https://www.nottingham.ac.uk/economics/people/holger.breinlich" style="color:var(--accent);text-decoration:none;">Holger Breinlich</a>
+          and <a href="http://web.ics.purdue.edu/~asoderbe/Site/Home.html" style="color:var(--accent);text-decoration:none;">Anson Soderbery</a> &nbsp;·&nbsp;
+          <span class="journal">American Economic Journal: Economic Policy</span>, November 2018, Vol. 10 No. 4
+        </div>
+        <p class="paper-abstract">
+          Using detailed U.K. firm-product data and tariff variation from EU trade agreements,
+          we show that trade liberalization causes firms to rebalance their revenue mix away from
+          goods and toward services. This margin of adjustment — largely invisible to trade statistics —
+          accounts for a substantial share of the aggregate employment response to import competition.
+        </p>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/bsw_aej_revision_2nd_round_final.pdf">PDF</a>
+          <a href="https://gregcwright-econ.github.io/files/bsw_appendix.pdf">Appendix</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Immigration, Trade and Productivity in Services: Evidence from U.K. Firms</div>
+        <div class="paper-meta">
+          With Giovanni Peri and Gianmarco Ottaviano &nbsp;·&nbsp;
+          <span class="journal">Journal of International Economics</span>, May 2018, Vol. 112
+        </div>
+        <p class="paper-abstract">
+          Combining employer-employee matched data with firm-level trade records, we show that
+          immigration raises firm-level productivity in services primarily by expanding the set
+          of trading partners. Firms that hire immigrants from a given country are significantly
+          more likely to subsequently export to and import from that country.
+        </p>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/opw_uk_june_2016.pdf">PDF</a>
+          <a href="http://www.voxeu.org/article/immigration-trade-and-productivity-services">VoxEU</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Processing Immigration Shocks: Firm Responses on the Innovation Margin</div>
+        <div class="paper-meta">
+          With <a href="http://rowenagray.weebly.com" style="color:var(--accent);text-decoration:none;">Rowena Gray</a>
+          and Giulia Montresor &nbsp;·&nbsp;
+          <span class="journal">Journal of International Economics</span>, September 2020, Vol. 126
+        </div>
+        <p class="paper-abstract">
+          We show that immigration-driven increases in high-skilled labor supply raise firm
+          patenting activity, particularly in technology classes where immigrants have comparative
+          advantage. The innovation response is faster and larger at firms with prior experience
+          employing foreign workers, suggesting that absorptive capacity shapes the returns to
+          immigrant talent.
+        </p>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/gmw_2020_rev2.pdf">PDF</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">Increasing Returns to Scale Within Limits: A Model of ICT</div>
+        <div class="paper-meta">
+          With <a href="https://www.essex.ac.uk/people/WANGT12503/Tianxi-Wang" style="color:var(--accent);text-decoration:none;">Tianxi Wang</a> &nbsp;·&nbsp;
+          <span class="journal">Journal of Economic Theory</span>, September 2020, Vol. 189
+        </div>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/techchange_inequality_may28_2020.pdf">PDF</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">The Usual Suspects: Do Risk Preference, Altruism, and Health Predict the Response to COVID-19?</div>
+        <div class="paper-meta">
+          With <a href="http://ketkisheth.weebly.com" style="color:var(--accent);text-decoration:none;">Ketki Sheth</a> &nbsp;·&nbsp;
+          <span class="journal">Review of Economics of the Household — Special Issue on COVID-19</span>, October 2020
+        </div>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/main_document.pdf">PDF</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">The Human Capital Legacy of a Trade Embargo</div>
+        <div class="paper-meta">
+          With <a href="https://sites.google.com/view/mparey/" style="color:var(--accent);text-decoration:none;">Matthias Parey</a>
+          and <a href="https://sites.google.com/site/achakrb/" style="color:var(--accent);text-decoration:none;">Abhishek Chakravarty</a> &nbsp;·&nbsp;
+          <span class="journal">Journal of the European Economic Association</span>, June 2021
+        </div>
+        <p class="paper-abstract">
+          We use the U.S. embargo on Cuba as a natural experiment to identify the long-run effects
+          of trade disruption on human capital accumulation. Cohorts that came of age during the
+          embargo show persistently lower educational attainment and occupational complexity,
+          with effects concentrated among those who would otherwise have worked in export-oriented sectors.
+        </p>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/embargo-may-2020-final.pdf">PDF</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">A Rising Tide? The Local Incidence of the Second Wave of Globalization</div>
+        <div class="paper-meta">
+          With Rowena Gray &nbsp;·&nbsp;
+          <span class="journal">Journal of International Economics</span>, March 2024, Vol. 148
+        </div>
+        <p class="paper-abstract">
+          We examine the distributional effects of the post-2000 expansion of global value chains
+          on U.S. local labor markets, finding that the gains from the second wave of globalization
+          were concentrated among higher-skilled workers and regions with greater initial exposure
+          to manufacturing, widening inequality within already-diverging places.
+        </p>
+        <div class="paper-links">
+          <a href="https://gregcwright-econ.github.io/files/rising_tide_aug_2022.pdf">PDF</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- OTHER WORK -->
+    <section id="other">
+      <div class="section-label">Other Work &amp; Policy</div>
+
+      <div class="other-item">
+        <div>
+          <div class="other-title">International Trade and Labor Markets</div>
+          <div class="co"><em>Oxford Research Encyclopedia of Economics and Finance</em>, July 2023</div>
+        </div>
+        <a href="https://oxfordre.com/economics/display/10.1093/acrefore/9780190625979.001.0001/acrefore-9780190625979-e-899">Read ↗</a>
+      </div>
+
+      <div class="other-item">
+        <div>
+          <div class="other-title">Brookings Publications on Local Economic Development</div>
+          <div class="co">Brookings Institution</div>
+        </div>
+        <a href="https://www.brookings.edu/people/greg-wright/">View ↗</a>
+      </div>
+
+      <div class="other-item">
+        <div>
+          <div class="other-title">Is Publicly-Available Firm-Level Data Reliable? Evidence from the UK</div>
+          <div class="co">With Holger Breinlich &amp; Patrick Nolen · <em>PLOS One</em>, November 2020</div>
+        </div>
+        <a href="https://gregcwright-econ.github.io/files/comparisons_bnw.pdf">PDF</a>
+      </div>
+
+      <div class="other-item">
+        <div>
+          <div class="other-title">Report on the State of Available Data for the Study of International Trade and FDI</div>
+          <div class="co">With Feenstra, Lipsey, et al. · NBER Working Paper No. 16254, 2010</div>
+        </div>
+        <a href="https://gregcwright-econ.github.io/files/report_on_trade_data_april_23_2010_final.pdf">PDF</a>
+      </div>
+
+      <div class="other-item">
+        <div>
+          <div class="other-title">The Dynamics and Differentiation of Latin American Agricultural Exports</div>
+          <div class="co">With <a href="https://www.brmandel.com" style="color:var(--accent);text-decoration:none;">Ben Mandel</a>, 2012</div>
+        </div>
+        <a href="https://gregcwright-econ.github.io/files/mandel_lac_agriculture_final.pdf">PDF</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Greg C. Wright · UC Merced</span>
+    <span>gwright4@ucmerced.edu</span>
+  </footer>
+
+</div>
+</body>
+</html>
