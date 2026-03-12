@@ -292,7 +292,20 @@
     color: var(--muted);
     font-family: var(--sans);
   }
-  .other-item a {
+  .other-item .co a {
+    color: var(--accent);
+    text-decoration: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-transform: none;
+    letter-spacing: normal;
+    padding: 0;
+    border: none;
+    white-space: normal;
+  }
+  .other-item .co a:hover { background: none; color: var(--accent); border: none; text-decoration: underline; }
+  .other-item > a {
     font-family: var(--sans);
     font-size: 0.7rem;
     font-weight: 500;
@@ -306,7 +319,7 @@
     border-radius: 2px;
     flex-shrink: 0;
   }
-  .other-item a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .other-item > a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
   /* ── Footer ── */
   footer {
