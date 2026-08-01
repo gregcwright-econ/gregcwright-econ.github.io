@@ -270,6 +270,39 @@
   }
   .paper-links a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
+  .paper-featured-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .paper-featured-figure {
+    margin: 0;
+    padding-top: 0.2rem;
+  }
+
+  .paper-featured-figure a {
+    display: block;
+  }
+
+  .paper-featured-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #fff;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+  }
+
+  .paper-featured-figure figcaption {
+    margin-top: 0.35rem;
+    font-family: var(--sans);
+    font-size: 0.68rem;
+    line-height: 1.4;
+    color: var(--light);
+  }
+
   .status-badge {
     display: inline-block;
     font-family: var(--sans);
@@ -353,10 +386,15 @@
   /* ── Responsive ── */
   @media (max-width: 600px) {
     header { grid-template-columns: 1fr; }
-    .header-links { flex-direction: row; align-items: flex-start; }
+    .header-links { flex-direction: row; align-items: flex-start; flex-wrap: wrap; }
     .bio { grid-template-columns: 1fr; }
     .photo-placeholder { display: none; }
     .other-item { flex-direction: column; gap: 0.4rem; }
+  }
+
+  @media (max-width: 760px) {
+    .paper-featured-content { grid-template-columns: 1fr; }
+    .paper-featured-figure { max-width: 560px; }
   }
 </style>
 </head>
@@ -427,26 +465,36 @@
         </div>
       </div>
 
-      <div class="paper">
-        <div class="paper-title">
-          The Local Economic Impact of Data Centers
-        </div>
-        <div class="paper-meta">
-          With <a href="https://www.danybahar.com/" style="color:var(--accent);text-decoration:none;">Dany Bahar</a>
-          &nbsp;·&nbsp; 2026
-        </div>
-        <p class="paper-abstract">
-          Hyperscale data centers cost over a billion dollars but employ only dozens of workers.
-          Comparing isolated built facilities with announced-then-cancelled sites, we find a large
-          but sharply localized footprint in nighttime lights that fades within five kilometers.
-          Advertised salaries and new-firm formation do not rise at opening. Hiring and supplier
-          estimates are also centered near zero, although less precise, while detailed county-industry
-          data do not identify downstream effects cleanly. Rents rise modestly without net
-          in-migration, and residential electricity rates show no increase.
-        </p>
-        <div class="paper-links">
-          <a href="https://gregcwright-econ.github.io/files/DataCenters_LocalImpact_2026.pdf">PDF</a>
-          <a href="https://gregcwright-econ.github.io/data-centers/">Evidence Guide</a>
+      <div class="paper paper-featured">
+        <div class="paper-featured-content">
+          <div>
+            <div class="paper-title">
+              The Local Economic Impact of Data Centers
+            </div>
+            <div class="paper-meta">
+              With <a href="https://www.danybahar.com/" style="color:var(--accent);text-decoration:none;">Dany Bahar</a>
+              &nbsp;·&nbsp; 2026
+            </div>
+            <p class="paper-abstract">
+              Hyperscale data centers cost over a billion dollars but employ only dozens of workers.
+              Comparing isolated built facilities with announced-then-cancelled sites, we find a large
+              but sharply localized footprint in nighttime lights that fades within five kilometers.
+              Advertised salaries and new-firm formation do not rise at opening. Hiring and supplier
+              estimates are also centered near zero, although less precise, while detailed county-industry
+              data do not identify downstream effects cleanly. Rents rise modestly without net
+              in-migration, and residential electricity rates show no increase.
+            </p>
+            <div class="paper-links">
+              <a href="https://gregcwright-econ.github.io/files/DataCenters_LocalImpact_2026.pdf">PDF</a>
+              <a href="https://gregcwright-econ.github.io/data-centers/">Evidence Guide</a>
+            </div>
+          </div>
+          <figure class="paper-featured-figure">
+            <a href="files/data-centers-compute-users-map.png" aria-label="Open the full-size map of US compute users and data centers">
+              <img src="files/data-centers-compute-users-map.png" width="1577" height="955" loading="lazy" alt="Map of the United States showing compute-user firms and data centers, which cluster in many of the same metropolitan areas">
+            </a>
+            <figcaption>US compute users and data centers. Select the map to enlarge.</figcaption>
+          </figure>
         </div>
       </div>
 
