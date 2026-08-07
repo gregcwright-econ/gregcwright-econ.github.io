@@ -739,20 +739,20 @@
         <div class="section-head">
           <div class="section-number">02 / Our findings</div>
           <div>
-            <h2>A large physical investment. A much smaller local economic response.</h2>
-            <p class="section-intro">Bahar and Wright study the US cloud-era build-out using construction timing, within-site rings, announced projects that were not built, and county diagnostics. The strongest results concern the physical footprint and narrow bounds for salaries and firm entry.</p>
+            <h2>A large physical investment. No broad local economic response.</h2>
+            <p class="section-intro">Bahar and Wright begin with a registry of 341 hyperscale facilities and combine satellite-based construction timing with within-site rings, 84 announced projects that were not built, and county panels. Outcome samples vary with data availability, but a common-site check produces the same qualitative pattern. The clearest findings are a sharply localized physical footprint and narrow bounds on advertised salaries and firm entry.</p>
           </div>
         </div>
 
         <div class="finding-feature">
           <figure class="chart-card">
-            <img src="assets/capital-footprint.png" alt="Event study showing nighttime radiance flat before construction, rising about 70 percent in the construction year and more in the following year.">
-            <figcaption>Built sites versus announced near misses. The near-miss estimate is +70% in the construction year. The paper's within-site log(1 + radiance) estimate is +38%, with a 95% interval of +15% to +71%. The difference reflects the transformation and comparison group.</figcaption>
+            <img src="assets/capital-footprint.png" alt="Event study showing the radiance difference between completed and near-miss sites flat before construction, then rising 70 percent in the construction year.">
+            <figcaption>Completed sites versus announced projects that were not built. Among 43 isolated built sites and 49 isolated near misses, radiance at completed sites rises 70% relative to near misses in the construction year; near-miss sites show no increase. The paper's within-site log(1 + radiance) estimate is +38%, with a 95% interval of +15% to +71%. The difference reflects the outcome transformation, not the comparison group.</figcaption>
           </figure>
           <div class="feature-copy">
             <div>
               <strong>+38%</strong>
-              <h3>Nighttime light within one kilometer when construction begins.</h3>
+              <h3>Nighttime radiance within one kilometer when construction begins.</h3>
               <p>The change fades rapidly with distance and is near zero by five kilometers. Daytime imagery independently confirms land clearing at the same time.</p>
             </div>
             <div class="method">Within-site estimate with site-specific pre-construction trends. 95% CI: +15% to +71%.</div>
@@ -776,25 +776,25 @@
             <div class="status">Less precise</div>
             <h3>Job postings</h3>
             <div class="estimate">+5.2%</div>
-            <p>The 95% interval is -5.3% to +16.8%. This rules out a large local hiring boom, not a modest response or the facility's own jobs.</p>
+            <p>The 95% interval is -5.3% to +16.8%. This rules out increases above roughly 17% but allows modest gains and cannot isolate the facility's own hiring.</p>
           </article>
           <article class="finding uncertain">
             <div class="status">Inconclusive</div>
             <h3>Supplier activity</h3>
-            <div class="estimate">Near zero</div>
-            <p>Supplier-posting estimates have wide intervals. The available design cannot rule out economically meaningful increases.</p>
+            <div class="estimate">+5.9%</div>
+            <p>The 95% interval is -15.0% to +32.0%. The estimate does not establish whether local demand for supplier industries rises.</p>
           </article>
           <article class="finding suggestive">
             <div class="status">Suggestive</div>
             <h3>Rents and public revenue</h3>
             <div class="estimate">+2% to +5% rents</div>
-            <p>Rent estimates are positive but uncertain. School property-tax revenue rises 16.6%, but the fiscal result does not survive adjustment across outcomes.</p>
+            <p>Synthetic-control rent estimates are positive but imprecise. School property-tax revenue has a +16.6% point estimate, but it is not statistically distinguishable from zero after adjustment across six fiscal outcomes.</p>
           </article>
           <article class="finding uncertain">
             <div class="status">Historical null</div>
             <h3>Residential electricity rates</h3>
             <div class="estimate">No increase</div>
-            <p>Rates do not rise after cloud-era hyperscale openings in the paper's utility-level specifications. This does not settle incidence for the larger AI build-out.</p>
+            <p>Average estimates range from -0.9% to -1.5% across comparisons and are imprecise. The sample does not cover the larger post-2022 AI build-out.</p>
           </article>
         </div>
 
@@ -810,7 +810,7 @@
           </div>
           <figure class="chart-card">
             <img src="assets/agglomeration-precision.png" alt="Confidence interval plot with salary, new-firm registrations, and business applications close to zero, and wider intervals for job and supplier postings.">
-            <figcaption>Preferred cloud-era agglomeration estimates from Bahar and Wright. Estimates are transformed from log points to percent.</figcaption>
+            <figcaption>Preferred hyperscale agglomeration estimates from Bahar and Wright. Estimates are transformed from log points to percent.</figcaption>
           </figure>
         </div>
       </div>
@@ -830,7 +830,7 @@
           <article class="difference"><div class="num">02</div><h3>Treatment</h3><p>First opening, facility count, capacity, revenue growth, and proposed AI load are not interchangeable shocks.</p></article>
           <article class="difference"><div class="num">03</div><h3>Period</h3><p>Cloud-era facilities provide a longer post-period. New AI campuses are larger but generally too recent for long-run evaluation.</p></article>
           <article class="difference"><div class="num">04</div><h3>Method</h3><p>Within-site comparisons, shift-share instruments, utility event studies, and dispatch models rely on different assumptions.</p></article>
-          <article class="difference"><div class="num">05</div><h3>Outcome</h3><p>Direct data-processing entry can rise without producing a broad cluster of suppliers, workers, and downstream firms.</p></article>
+          <article class="difference"><div class="num">05</div><h3>Outcome</h3><p>Data-processing employment and establishments can rise because the facility itself enters, even when related industries show no consistent response.</p></article>
         </div>
       </div>
     </section>
@@ -850,7 +850,7 @@
           <article class="study">
             <div class="study-authors">Bahar &amp; Wright<br>2026</div>
             <div class="study-method">Sub-county rings, announced near misses, county diagnostics</div>
-            <div class="study-result">Large and localized construction footprint; narrow nulls for advertised salaries and firm registrations; less precise hiring and supplier estimates; uncertain rent gains.</div>
+            <div class="study-result">Large and localized construction footprint; no rise in advertised salaries or firm registrations; less precise hiring and supplier estimates; direct data-processing entry but no consistent growth in related industries.</div>
             <a href="/files/DataCenters_LocalImpact_2026.pdf">Paper</a>
           </article>
           <article class="study">
@@ -889,7 +889,7 @@
         </div>
         <div class="takeaway-grid">
           <article class="takeaway"><div class="count">01</div><h3>The capital footprint is real and local.</h3><p>Construction transforms the parcel. Satellite measures make that timing and spatial concentration visible.</p></article>
-          <article class="takeaway"><div class="count">02</div><h3>Capital scale does not guarantee a broad local multiplier.</h3><p>Direct activity can increase without creating a technology ecosystem around the site.</p></article>
+          <article class="takeaway"><div class="count">02</div><h3>Capital scale does not guarantee a broad local multiplier.</h3><p>Direct data-processing activity can increase without creating a technology ecosystem around the site.</p></article>
           <article class="takeaway"><div class="count">03</div><h3>Electricity incidence depends on institutions and constraints.</h3><p>Wholesale markets, utility ownership, rate regulation, investment timing, and spare capacity all matter.</p></article>
           <article class="takeaway"><div class="count">04</div><h3>The AI build-out remains an open empirical question.</h3><p>The newest campuses are larger and more power-intensive. Historical evidence should inform the debate, not end it.</p></article>
         </div>
@@ -916,7 +916,7 @@
   <footer>
     <div class="wrap footer-inner">
       <span>Prepared by Greg C. Wright with evidence from Bahar and Wright and the studies cited above.</span>
-      <span>Last reviewed July 2026 &middot; <a href="mailto:gwright4@ucmerced.edu">Send a correction</a></span>
+      <span>Last reviewed August 2026 &middot; <a href="mailto:gwright4@ucmerced.edu">Send a correction</a></span>
     </div>
   </footer>
 
@@ -924,7 +924,7 @@
     const answers = {
       jobs: {
         title: "Do data centers create local jobs?",
-        body: "The evidence depends on geography and treatment. Bahar and Wright find no large opening-date hiring boom near cloud-era hyperscale sites, although their job-posting interval still permits a modest increase. Alvarez and coauthors find positive county-level employment effects using a shift-share instrument for data-center growth. Direct data-processing and construction activity can rise without implying a broad local technology cluster.",
+        body: "The evidence depends on geography and treatment. Bahar and Wright estimate a 5.2% increase in nearby job postings, with a 95% interval from -5.3% to +16.8%. This rules out a large opening-date hiring boom but permits moderate gains. Their county data show growth in data-processing employment and establishments, which include the facility itself, but no consistent response in related industries. Alvarez and coauthors find positive county-level employment effects using a shift-share instrument for data-center growth.",
         sources: '<a href="/files/DataCenters_LocalImpact_2026.pdf">Bahar &amp; Wright</a> &middot; <a href="https://www.nber.org/papers/w35194" target="_blank" rel="noopener">Alvarez et al.</a>'
       },
       electricity: {
@@ -934,12 +934,12 @@
       },
       housing: {
         title: "Do data centers raise rents or house prices?",
-        body: "Bahar and Wright find positive rent estimates of roughly 2% to 5%, but the estimates are uncertain and net migration and multifamily permitting do not rise. Alvarez and coauthors find positive county-level house-price effects. These outcomes differ: rents and sale prices measure different margins, and county estimates can capture broader market changes than a local ring design.",
+        body: "Bahar and Wright's synthetic-control rent estimates are positive at roughly 2% to 5%, while their built-versus-near-miss estimate is +4.3%. Both designs are imprecise. Net migration and multifamily permitting do not rise. Alvarez and coauthors find positive county-level house-price effects. Rents and sale prices measure different margins, and county estimates can capture broader market changes than a local ring design.",
         sources: '<a href="/files/DataCenters_LocalImpact_2026.pdf">Bahar &amp; Wright</a> &middot; <a href="https://www.nber.org/papers/w35194" target="_blank" rel="noopener">Alvarez et al.</a>'
       },
       clusters: {
         title: "Do data centers create local technology clusters?",
-        body: "Bahar and Wright do not find systematic increases in nearby firm registrations, advertised salaries, or compute-firm entry at opening. Compute firms are disproportionately close to data centers, but 69% of those within 25 kilometers predate the nearest facility. Shared access to power, fiber, metropolitan markets, and skilled labor can cause both groups to colocate without the data center creating the cluster.",
+        body: "Bahar and Wright do not find increases in nearby firm registrations or national business applications at opening. County data show direct entry in data processing but no consistent growth in related industries. Compute firms are disproportionately close to data centers, but 69% of those within 25 kilometers predate the nearest facility. Shared metropolitan advantages can therefore make the two groups colocate without the data center creating the cluster.",
         sources: '<a href="/files/DataCenters_LocalImpact_2026.pdf">Bahar &amp; Wright</a>'
       },
       taxes: {
