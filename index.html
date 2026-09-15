@@ -270,39 +270,6 @@
   }
   .paper-links a:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
 
-  .paper-featured-content {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 420px;
-    gap: 1.5rem;
-    align-items: start;
-  }
-
-  .paper-featured-figure {
-    margin: 0;
-    padding-top: 0.2rem;
-  }
-
-  .paper-featured-figure a {
-    display: block;
-  }
-
-  .paper-featured-figure img {
-    display: block;
-    width: 100%;
-    height: auto;
-    background: #fff;
-    border: 1px solid var(--rule);
-    border-radius: 2px;
-  }
-
-  .paper-featured-figure figcaption {
-    margin-top: 0.35rem;
-    font-family: var(--sans);
-    font-size: 0.68rem;
-    line-height: 1.4;
-    color: var(--light);
-  }
-
   .status-badge {
     display: inline-block;
     font-family: var(--sans);
@@ -391,11 +358,6 @@
     .photo-placeholder { display: none; }
     .other-item { flex-direction: column; gap: 0.4rem; }
   }
-
-  @media (max-width: 900px) {
-    .paper-featured-content { grid-template-columns: 1fr; }
-    .paper-featured-figure { max-width: 720px; }
-  }
 </style>
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"5fd5b5aa5f004ec894c63a5f59a8d426"}'></script>
@@ -444,105 +406,36 @@
       <img src="files/wright-greg-photo.jpeg" alt="Greg C. Wright" style="width:100%; border-radius:2px;">
     </div>
 
-    <!-- WORKING PAPERS -->
-    <section id="working-papers">
-      <div class="section-label">Working Papers</div>
-
-      <div class="paper paper-featured">
-        <div class="paper-featured-content">
-          <div>
-            <div class="paper-title">
-              Child Labor and Sibling Schooling: Evidence from 1920 America
-            </div>
-            <div class="paper-meta">
-              With <a href="https://rowenagray.weebly.com" style="color:var(--accent);text-decoration:none;">Rowena Gray</a>
-              &nbsp;·&nbsp; 2026
-            </div>
-            <p class="paper-abstract">
-              State child-labor laws strongly increased older-sibling work, but that work did not
-              measurably raise younger siblings' school attendance. Using the full-count 1920 US
-              Census, we separate the child who works from the sibling who might benefit and show
-              why earlier household-level estimates imply a different result.
-            </p>
-            <div class="paper-links">
-              <a href="https://gregcwright-econ.github.io/files/child-labor-sibling-schooling.pdf">PDF</a>
-            </div>
-          </div>
-          <figure class="paper-featured-figure">
-            <a href="files/child-labor-law-age-profiles.png" aria-label="Open the full-size child-labor law and sibling-schooling figure">
-              <img src="files/child-labor-law-age-profiles.png" width="1755" height="641" loading="lazy" alt="Three age-profile panels showing that child-labor laws increased child and older-sibling market work without increasing younger-child school attendance">
-            </a>
-            <figcaption>Figure 1. Work and attendance profiles under the age-12 and age-14 laws. Select the figure to enlarge.</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="paper paper-featured">
-        <div class="paper-featured-content">
-          <div>
-            <div class="paper-title">
-              Attention and the Economic Response to Immigration Enforcement
-            </div>
-            <div class="paper-meta">2026</div>
-            <p class="paper-abstract">
-              Does the community response to immigration enforcement depend on the operation or on the
-              public attention it receives? I compare heavily Latino-immigrant neighborhoods with nearby
-              neighborhoods around U.S. ICE events. More Spanish-language news coverage produces larger
-              foot-traffic declines. A competing-news instrument based on foreign disasters implies that
-              one standard deviation of coverage reduces foot traffic by 1.6 percent. Arrests explain
-              little, and the response is driven by national rather than local attention.
-            </p>
-            <div class="paper-links">
-              <a href="https://gregcwright-econ.github.io/files/information_shocks_ice_enforcement.pdf">PDF</a>
-              <a href="https://gregcwright-econ.github.io/files/information_shocks_ice_enforcement_appendix.pdf">Online Appendix</a>
-            </div>
-          </div>
-          <figure class="paper-featured-figure">
-            <a href="files/attention-news-coverage-event-time.png" aria-label="Open the full-size event-time plot of the effect of news coverage">
-              <img src="files/attention-news-coverage-event-time.png" width="1149" height="642" loading="lazy" alt="Event-time plot showing no effect of news coverage before immigration enforcement and a growing negative effect afterward">
-            </a>
-            <figcaption>Figure 1. The effect of news coverage over event time. Select the figure to enlarge.</figcaption>
-          </figure>
-        </div>
-      </div>
-
-      <div class="paper paper-featured">
-        <div class="paper-featured-content">
-          <div>
-            <div class="paper-title">
-              The Local Economic Impact of Data Centers
-            </div>
-            <div class="paper-meta">
-              With <a href="https://www.danybahar.com/" style="color:var(--accent);text-decoration:none;">Dany Bahar</a>
-              &nbsp;·&nbsp; 2026
-            </div>
-            <p class="paper-abstract">
-              Hyperscale data centers cost over a billion dollars but employ only dozens of workers.
-              Satellite data show that construction transforms the site, but the increase in nighttime
-              lights fades within five kilometers. Announced projects of similar scale that were never
-              built show no comparable change. Advertised salaries and new-firm registrations do not rise,
-              while hiring and supplier estimates are also near zero but less precise. County data show no
-              consistent growth across related industries, and rent estimates are positive but imprecise.
-            </p>
-            <div class="paper-links">
-              <a href="https://gregcwright-econ.github.io/files/DataCenters_LocalImpact_2026.pdf">PDF</a>
-              <a href="https://gregcwright-econ.github.io/data-centers/">Evidence Guide</a>
-            </div>
-          </div>
-          <figure class="paper-featured-figure">
-            <a href="files/data-centers-compute-users-map.png" aria-label="Open the full-size map of US compute users and data centers">
-              <img src="files/data-centers-compute-users-map.png" width="1577" height="955" loading="lazy" alt="Map of the United States showing compute-user firms and data centers, which cluster in many of the same metropolitan areas">
-            </a>
-            <figcaption>US compute users and data centers. Select the map to enlarge.</figcaption>
-          </figure>
-        </div>
-      </div>
-
-    </section>
-
     <!-- WORK IN PROGRESS -->
     <section id="work-in-progress">
       <div class="section-label">Work in Progress</div>
+
+      <div class="paper">
+        <div class="paper-title">
+          Child Labor and Sibling Schooling: Evidence from 1920 America
+        </div>
+        <div class="paper-meta">
+          With <a href="https://rowenagray.weebly.com" style="color:var(--accent);text-decoration:none;">Rowena Gray</a>
+          &nbsp;·&nbsp; 2026
+        </div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          Attention and the Economic Response to Immigration Enforcement
+        </div>
+        <div class="paper-meta">2026</div>
+      </div>
+
+      <div class="paper">
+        <div class="paper-title">
+          The Local Economic Impact of Data Centers
+        </div>
+        <div class="paper-meta">
+          With <a href="https://www.danybahar.com/" style="color:var(--accent);text-decoration:none;">Dany Bahar</a>
+          &nbsp;·&nbsp; 2026
+        </div>
+      </div>
 
       <div class="paper">
         <div class="paper-title">
